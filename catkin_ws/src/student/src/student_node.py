@@ -8,15 +8,15 @@ class student(object):
         #=====PUBLISH=====
         self.pub_cmd = rospy.Publisher("/answer",Int32,queue_size=1)
         #=====SUBSCRIBE=====
-        name_sub = rospy.Subscriber("/question", Int32, self.question_cb, queue_size=1)
+        name_sub = rospy.Subscriber(???, Int32, self.question_cb, queue_size=1)
         rospy.spin()
 
-    def question_cb(self, msg):
-        answer = msg.data*msg.data
+    def ???(self, msg):
+        answer = ???
         answer_msg = Int32()
         answer_msg.data = answer
         print "Student: I've already publish the answer to you"
-        self.pub_cmd.publish(answer_msg)
+        self.pub_cmd.???
 
 if __name__ == "__main__":
     rospy.init_node("student",anonymous=False)
