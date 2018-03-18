@@ -18,16 +18,15 @@ class boy(object):
         name_msg.data = self.name
         rate = rospy.Rate(1) # 10hz
         while not rospy.is_shutdown():
-            print "Boy: Hi"
+            print "Boy:  Hi"
             self.pub_cmd.publish(name_msg)
             rate.sleep()
 
 
     def name_cb(self, msg):
-        print "Boy: Nice to meet you ", msg.data
+        print "Boy:  Nice to meet you", msg.data
         print ""
         print "-----------"
-
 
 if __name__ == "__main__":
     rospy.init_node("boy",anonymous=False)

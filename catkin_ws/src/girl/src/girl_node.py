@@ -18,7 +18,6 @@ class girl(object):
         print "Girl: Hello", msg.data
         self.pub_cmd.publish(name_msg)
 
-
 if __name__ == "__main__":
     rospy.init_node("girl",anonymous=False)
     girl = girl()

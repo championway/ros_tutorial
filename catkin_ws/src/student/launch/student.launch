@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<node ns="student" pkg="student" type="student_node.py" name="student_node" output="screen" clear_params="true" required="true">
+	</node>
+</launch>
