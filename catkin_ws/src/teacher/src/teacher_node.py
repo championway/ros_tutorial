@@ -6,9 +6,9 @@ class teacher(object):
     def __init__(self):
         self.number = 15
         #=====PUBLISH=====
-        self.pub_number = rospy.Publisher("/question",???,queue_size=1)
+        self.pub_number = rospy.Publisher("/question", Int32, queue_size=1)
         #=====SUBSCRIBE=====
-        name_sub = rospy.Subscriber(???, ???, self.answer_cb, queue_size=1)
+        name_sub = rospy.Subscriber("/answer", Int32, self.answer_cb, queue_size=1)
         self.conversation()
         rospy.spin() # spin() simply keeps python from exiting until this node is stopped
 
@@ -23,8 +23,8 @@ class teacher(object):
 
 
     def ???(self, msg):
-        if ??? == self.number*self.number:
-            print "Teacher: Yes the answer is", ???
+        if msg.data == self.number*self.number:
+            print "Teacher: Yes the answer is", msg.data
         else:
             print "Teacher: No, your answer is wrong"
         print ""
