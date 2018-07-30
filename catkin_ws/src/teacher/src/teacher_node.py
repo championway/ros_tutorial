@@ -15,7 +15,7 @@ class teacher(object):
     def conversation(self):
         number_msg = Int32()
         number_msg.data = self.number
-        rate = rospy.Rate(1) # 10hz
+        rate = rospy.Rate(1) # 1hz
         while not rospy.is_shutdown():
             print "Teacher: How much is square of", self.number
             self.pub_number.publish(number_msg)
